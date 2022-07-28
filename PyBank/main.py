@@ -46,7 +46,7 @@ with open(csvpath) as csvfile:
 
 
 # final result should also write a text file
-output_path = os.path.join("Resources",'FinAnalysis.txt')
+output_path = os.path.join("analysis",'FinAnalysis.txt')
 
 with open(output_path, 'w') as file:
     file.write('Financial Analysis \n -------------------------------------------- \n')
