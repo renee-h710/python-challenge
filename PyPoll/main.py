@@ -47,15 +47,27 @@ with open(file) as election_data:
         candidatePercentage[candidate_index] = percent# # The percentage of votes each candidate won
 
 
-    def printCandidates(int):
-        print(f'{candidates[int]}: {candidatePercentage[int]} ({candidateVotes[int]})')
-    
-
-    printCandidates(0)
-    printCandidates(1)
-    printCandidates(2)
+   
+    print(f'{candidates[0]}: {candidatePercentage[0]} ({candidateVotes[0]})')
+    print(f'{candidates[1]}: {candidatePercentage[1]} ({candidateVotes[1]})')
+    print(f'{candidates[2]}: {candidatePercentage[2]} ({candidateVotes[2]})')
     print('-----------------------------------')
     print(f'Winner: {winner}')
     
 
  # The winner of the election based on popular vote
+
+# final result should also write a text file
+output_path = os.path.join("analysis",'ElectionAnalysis.txt')
+
+with open(output_path, 'w') as file:
+    file.write('Election Results\n')
+    file.write('------------------------------------\n')  
+    file.write(f"Total Votes: {totalVotes}\n") 
+    file.write('------------------------------------\n') 
+    file.write(f'{candidates[0]}: {candidatePercentage[0]} ({candidateVotes[0]})\n') 
+    file.write(f'{candidates[1]}: {candidatePercentage[1]} ({candidateVotes[1]})\n') 
+    file.write(f'{candidates[2]}: {candidatePercentage[2]} ({candidateVotes[2]})\n') 
+    file.write('------------------------------------\n') 
+    file.write(f'Winner: {winner}\n') 
+    
